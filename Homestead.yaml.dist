@@ -1,0 +1,36 @@
+---
+ip: "192.168.10.89"
+memory: 2048
+cpus: 1
+hostname: mylaravel.app
+name: mylaravel
+provider: virtualbox
+
+authorize: ~/.ssh/id_rsa.pub
+
+keys:
+    - ~/.ssh/id_rsa
+
+folders:
+    - map: "/Users/zeroc0d3/repos/mylaravel.app"
+      to: "/home/vagrant/mylaravel.app"
+
+sites:
+    - map: location-manager.local
+      to: "/home/vagrant/mylaravel.app/public"
+
+databases:
+    - db_mylaravel_oauth2_laravel53
+
+# blackfire:
+#     - id: foo
+#       token: bar
+#       client-id: foo
+#       client-token: bar
+
+# ports:
+#     - send: 50000
+#       to: 5000
+#     - send: 7777
+#       to: 777
+#       protocol: udp
